@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+//Importing Tailwind
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
+  a {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-surface;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-4xl font-semibold text-surface;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold text-surface;
+  }
+
+  h4 {
+    @apply text-base sm:text-lg font-semibold;
+  }
+
+  p {
+    @apply text-sm font-normal text-surface opacity-70 leading-6;
+  }
+}
+
+@layer components {
+  //Home Styling
+  .Home {
+    overflow-x: hidden;
+  }
+  // Custom Buttons styling
+  .btn {
+    @apply py-3 px-8 rounded-xl font-semibold;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #13b8ba 0%, #6a0a6b 100%);
+
+    @apply hover:scale-105 transition hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-interactiveMain transition hover:scale-105 hover:brightness-110;
+  }
+
+  //Hero section styling
+  .heroBottom {
+    @apply rounded-xl;
+    background: rgba(46, 114, 210, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  .heroBottomBox {
+    @apply rounded-lg w-[114px] max-w-[114px] h-24 p-10 flex justify-center items-center flex-col;
+
+    & > p {
+      @apply opacity-60;
+    }
+
+    background: linear-gradient(135deg, #13b8ba 0%, #6a0a6b 100%);
+
+    backdrop-filter: blur(5px);
+  }
+
+  //Feature Styling
+  .featureIconContainer {
+    @apply p-3 rounded-full my-5;
+    background: linear-gradient(135deg, #13b8ba 0%, #6a0a6b 100%);
+  }
+
+  //Whychooseus Styling
+  .Whychoosecard {
+    background-color: rgba(46, 114, 210, 0.1);
+    backdrop-filter: blur(5px);
+    transition: background-color ease-in-out 500ms, border ease-in-out 300ms;
+    &:hover {
+      background-color: #102141;
+    }
+  }
+
+  .Whychoosecardicon {
+    @apply p-3 rounded-lg;
+    background: linear-gradient(135deg, #13b8ba 0%, #6a0a6b 100%);
+  }
+
+  //Roadmap Styling
+
+  .progressCard {
+    @apply rounded-lg;
+    background: rgba(46, 114, 210, 0.1);
+    backdrop-filter: blur(5px);
+    & > ul {
+      & > li::marker {
+        @apply text-sm font-normal text-surface opacity-70 leading-6;
+      }
+    }
+  }
+
+  .completedProgress {
+    @apply backdrop-brightness-200;
+  }
+
+  .smallPointerCircle {
+    background-image: radial-gradient(
+      circle,
+      rgba(0, 212, 255, 1) 28%,
+      rgba(0, 213, 255, 0.565) 46%,
+      rgba(0, 213, 255, 0.324) 67%
+    );
+  }
+
+  // Allocation and Distribution styling
+
+  .chartContainerMain {
+    background: rgba(46, 114, 210, 0.1);
+    backdrop-filter: blur(2px);
+  }
+
+  .chartList {
+    & > ul > li > div {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    & > ul > li {
+      margin: 0.8rem 0rem;
+    }
+  }
+
+  // Team Members styling
+  .teamMember {
+    transition: all 300ms ease-in-out;
+    &:hover {
+      background: rgba(46, 114, 210, 0.1);
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  .memberSocialLinks {
+    & > li {
+      @apply text-surface hover:text-pink-700;
+
+      & > a > svg {
+        transition: fill 200ms ease-in-out;
+      }
+      & > a > svg:hover {
+        fill: #13b8ba;
+      }
+    }
+  }
+
+  // Partner styling
+  .PartnerContainer {
+    background: rgba(46, 114, 210, 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  // FAQs styling
+
+  .FAQsList {
+    & > li {
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: #2e72d2;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    .selected {
+      &::after {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+    }
+  }
+
+  .question {
+    background: rgba(46, 114, 210, 0.1);
+  }
+
+  // Footer styling
+
+  .footerForm {
+    & > div > div > label {
+      @apply text-surface text-base font-medium;
+    }
+
+    & > div > div > input,
+    & > div > div > textarea {
+      @apply py-2 px-4 bg-primaryMain text-surface border border-interactiveMain rounded-xl focus:outline-none;
+    }
+  }
+}
